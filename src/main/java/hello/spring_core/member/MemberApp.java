@@ -2,14 +2,14 @@
 //
 //import hello.spring_core.member.constant.Grade;
 //import hello.spring_core.member.entity.Member;
-//import hello.spring_core.member.service.crud.MemberCrudService;
-//import hello.spring_core.member.service.crud.impl.MemberCrudServiceImpl;
+//import hello.spring_core.member.service.crud.MemberService;
+//import hello.spring_core.member.service.crud.impl.MemberServiceImpl;
 //
 //public class MemberApp { // 순수 자바를 이용한 테스트
 //
 //    public static void main(String[] args) {
 //
-//        MemberCrudService memberService = new MemberCrudServiceImpl();
+//        MemberService memberService = new MemberServiceImpl();
 //        Member saveMember = new Member(1L, "A", Grade.VIP);
 //        memberService.signIn(saveMember);
 //
