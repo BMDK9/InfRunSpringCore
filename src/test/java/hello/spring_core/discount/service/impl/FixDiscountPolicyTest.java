@@ -7,31 +7,32 @@ import hello.spring_core.member.entity.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class FixDiscountPolicyTest {
+public class FixDiscountPolicyTest {
 
-    RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
+    FixDiscountPolicy discountPolicy = new FixDiscountPolicy();
 
-    @DisplayName("VIP는 10% 할인이 적용되어야 한다.")
+
+    @DisplayName("VIP는 1000원 할인된다.")
     @Test
-    void VIP_Discount_O() {
+    void VIP_FixDiscount_O() {
         // given
-        Member testVIPMember = new Member(1L, "VIP", Grade.VIP);
+        Member testVIPMember = new Member(1L, "A", Grade.VIP);
 
         // when
-        int discount = discountPolicy.discount(testVIPMember, 10000);
+        int discount = discountPolicy.discount(testVIPMember, 5000);
 
         // then
         assertThat(discount).isEqualTo(1000);
     }
 
-    @DisplayName("VIP가 아니면 할인이 적용되지 않는다")
+    @DisplayName("VIP가 아니면 할인 안된다.")
     @Test
-    void BASIC_Discount_X() {
+    void BASIC_FixDiscount_X() {
         // given
-        Member testBASICMember = new Member(1L, "BASIC", Grade.BASIC);
+        Member testBASICMember = new Member(1L, "A", Grade.BASIC);
 
         // when
-        int discount = discountPolicy.discount(testBASICMember, 10000);
+        int discount = discountPolicy.discount(testBASICMember, 5000);
 
         // then
         assertThat(discount).isEqualTo(0);
