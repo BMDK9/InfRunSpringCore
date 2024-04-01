@@ -1,17 +1,16 @@
-package hello.spring_core.member.service.impl;
+package hello.spring_core.member.service.crud.impl;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import hello.spring_core.member.constant.Grade;
 import hello.spring_core.member.entity.Member;
-import hello.spring_core.member.service.MemberService;
+import hello.spring_core.member.service.crud.MemberCrudService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class MemberServiceImplTest {
+class MemberCrudServiceImplTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberCrudService memberCrudService = new hello.spring_core.member.service.crud.impl.MemberCrudServiceImpl();
 
     @DisplayName("가입")
     @Test
@@ -20,8 +19,8 @@ class MemberServiceImplTest {
         Member testSaveMember = new Member(1L, "A", Grade.VIP);
 
         // when
-        memberService.signIn(testSaveMember);
-        Member findMember = memberService.findMember(1L);
+        memberCrudService.signIn(testSaveMember);
+        Member findMember = memberCrudService.findMember(1L);
 
         // then
         assertThat(testSaveMember).isEqualTo(findMember);

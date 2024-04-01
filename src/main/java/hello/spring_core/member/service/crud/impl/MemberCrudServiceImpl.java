@@ -1,11 +1,11 @@
-package hello.spring_core.member.service.impl;
+package hello.spring_core.member.service.crud.impl;
 
 import hello.spring_core.member.entity.Member;
 import hello.spring_core.member.repository.MemberRepository;
 import hello.spring_core.member.repository.impl.MemoryMemberRepository;
-import hello.spring_core.member.service.MemberService;
+import hello.spring_core.member.service.crud.MemberCrudService;
 
-public class MemberServiceImpl implements MemberService {
+public class MemberCrudServiceImpl implements MemberCrudService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
 

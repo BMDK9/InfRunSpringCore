@@ -1,8 +1,8 @@
-package hello.spring_core.member.service;
+package hello.spring_core.member.service.crud;
 
 import hello.spring_core.member.entity.Member;
 
-public interface MemberService {
+public interface MemberCrudService {
 
     void signIn(Member member);
 
