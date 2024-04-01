@@ -1,6 +1,9 @@
 package hello.spring_core;
 
+import hello.spring_core.discount.service.DiscountPolicy;
 import hello.spring_core.discount.service.impl.FixDiscountPolicy;
+import hello.spring_core.discount.service.impl.RateDiscountPolicy;
+import hello.spring_core.member.repository.MemberRepository;
 import hello.spring_core.member.repository.impl.MemoryMemberRepository;
 import hello.spring_core.member.service.MemberService;
 import hello.spring_core.member.service.impl.MemberServiceImpl;
@@ -17,11 +20,11 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
-    private MemoryMemberRepository memberRepository() {
+    private MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
-    private FixDiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy() {
+        return new RateDiscountPolicy();
     }
 }
