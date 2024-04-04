@@ -1,6 +1,7 @@
+package hello.spring_core.singleton;
+
 import hello.spring_core.AppConfig;
 import hello.spring_core.member.service.MemberService;
-import java.sql.SQLOutput;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
