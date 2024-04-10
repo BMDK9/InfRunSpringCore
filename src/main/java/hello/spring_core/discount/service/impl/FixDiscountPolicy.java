@@ -6,7 +6,9 @@ import static hello.spring_core.discount.service.constant.DiscountAmount.VIP_FIX
 import hello.spring_core.discount.service.DiscountPolicy;
 import hello.spring_core.member.constant.Grade;
 import hello.spring_core.member.entity.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     @Override
