@@ -6,9 +6,11 @@ import static hello.spring_core.discount.service.constant.DiscountAmount.VIP_PER
 import hello.spring_core.discount.service.DiscountPolicy;
 import hello.spring_core.member.constant.Grade;
 import hello.spring_core.member.entity.Member;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy {
 
     @Override
