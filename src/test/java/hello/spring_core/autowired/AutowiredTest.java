@@ -32,13 +32,6 @@ public class AutowiredTest {
     @Test
     @DisplayName("옵션 처리")
     void AutoWiredOption() {
-        // given
         ApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
-
-        // when
-
-
-        // then
-
     }
 }
