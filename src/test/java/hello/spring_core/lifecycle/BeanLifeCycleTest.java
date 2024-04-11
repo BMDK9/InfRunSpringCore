@@ -20,11 +20,10 @@ public class BeanLifeCycleTest {
         }
     }
     @Test
-    @DisplayName("빈 생명주기 테스트1")
-    void lifeCycleTest1() {
-        // 스프링 빈은 "객체 생성 -> 의존관계 주입" 의 라이프 사이클을 가진다. 예외는 있다(생성자 주입).
+    @DisplayName("빈 생명주기 테스트")
+    void lifeCycleTest() {
         ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
-        NetworkClient client = ac.getBean(NetworkClient.class); // 그래서 여기서는 Url은 null이 들어온다.
+        NetworkClient client = ac.getBean(NetworkClient.class);
         ac.close();
     }
 
