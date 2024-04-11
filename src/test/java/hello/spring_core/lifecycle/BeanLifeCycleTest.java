@@ -12,7 +12,7 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig {
 
-        @Bean //(initMethod = "init", destroyMethod = "close") // 이 방법도 잘 안씀
+        @Bean //(initMethod = "init", destroyMethod = "close") // 이 방법은 외부 라이브러리를 초기화 해야할 때 사용
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring-core.dev");
