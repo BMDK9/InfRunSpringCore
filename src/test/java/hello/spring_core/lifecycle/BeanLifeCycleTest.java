@@ -12,7 +12,7 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig {
 
-        @Bean(initMethod = "init", destroyMethod = "close") // 이 방법도 잘 안씀
+        @Bean //(initMethod = "init", destroyMethod = "close") // 이 방법도 잘 안씀
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring-core.dev");
