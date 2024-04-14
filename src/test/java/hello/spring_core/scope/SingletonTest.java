@@ -1,8 +1,9 @@
 package hello.spring_core.scope;
 
+import static org.assertj.core.api.Assertions.*;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -38,7 +39,7 @@ public class SingletonTest {
 
         ac.close();
 
-        Assertions.assertThat(singletonBean1).isSameAs(singletonBean2);
+        assertThat(singletonBean1).isSameAs(singletonBean2);
 
     }
 }

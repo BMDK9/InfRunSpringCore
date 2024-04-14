@@ -1,8 +1,9 @@
 package hello.spring_core.scope;
 
+import static org.assertj.core.api.Assertions.*;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,7 +27,7 @@ public class PrototypeTest {
 
     @Test
     @DisplayName("프로토타입 스코프 테스트")
-    void prototypeBeanFind() {
+    void prototypeBeanFind() { // 프로토타입은 생성해서 던져주고 관리 안한다. 지워버린다.
 
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
 
@@ -38,7 +39,7 @@ public class PrototypeTest {
         System.out.println("prototypeBean1 = " + prototypeBean1);
         System.out.println("prototypeBean2 = " + prototypeBean2);
 
-        Assertions.assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
+        assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
 
         ac.close();
     }
